@@ -2,21 +2,22 @@ clc
 clear all
 close all
 
-COMport='COM1';
-s=oSPort(COMport);
-startop(s,1);
+COMport='COM8';
+arduino=oSPort(COMport);
+%startop(arduino,1);
 
 
-[d,t]=read1000(s);%Obtaining data from arduino
-cSPort(s);
+[d,t]=read1000(arduino);%Obtaining data from arduino
+cSPort(arduino);
 
-title('Deph vs time');
-xlabel('Time [hh:mm:ss]');
-ylabel('Depth [m]')
+
 plot(t,d)
 grid on;
+title('Deph vs time');
+xlabel('Time [ms]');
+ylabel('Depth [m]')
 
-startop(s,0);
+startop(arduino,0);
 sFile(rData);
 
 

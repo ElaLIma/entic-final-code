@@ -1,13 +1,20 @@
 function [d,t] = read1000( s )
 %read Function that reads 1000 values data send by the arduino
+%d detph
+%t time
+num=1;
+d(num)=0;
+t(num)=0;
 
-adcr(0)=fscanf(s,'%3d');
-d(0)=depth(adcr(0));
+adcr(num)=fscanf(s,'%d');
+d(num)=depth(adcr(num));
 
-for i=1:1000
-    adcr(i)=fscanf(s,'%3d');
-    d(i)=depth(adcr(i));
+while (num<=1000)
+    num=num+1;
+    t(num)=t(num-1)+200;
+    adcr(num)=fscanf(s,'%d');
+    d(num)=depth(adcr(num));
 end
-t=0:200:lenght(addcr);
+
 end
 

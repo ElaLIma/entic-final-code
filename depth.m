@@ -9,6 +9,7 @@ sysV=5;
 a=(sysV*aDCR)/res; %Conversion of the ADC reading value to a voltage
 p=a/s; %Conversion of the voltage given by the sensor to a valid a presion
 
-d=(p*10)/(100e5/0.986); %The deph is obtain through the known pressure at 10m of deph by a rule of three
+d=(p*10)/(1e2); %The deph is obtained through the known pressure at 10m of deph by a rule of three
+
 end
 
