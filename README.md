@@ -1,3 +1,3 @@
 ## Arduino sketches
 
-Arduino codes, that send the data of the camera, the servo motor and the pressure sensor.
+Arduino codes, that send the data of the camera, the servomotor and the pressure sensor.
